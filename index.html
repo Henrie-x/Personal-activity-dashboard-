@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b10">
+  <title>PULSE - Activity Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="dashboard">
+
+    <header class="topbar">
+      <div class="brand">
+        <h2>PULSE<span>.</span></h2>
+        <p>PERSONAL WORKSPACE</p>
+      </div>
+
+      <div class="profile">
+        <span class="profile-avatar">H</span>
+        <div>
+          <h4>Welcome back</h4>
+          <p>Stay productive today</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">YOUR OVERVIEW</p>
+        <h1>Good morning.</h1>
+        <p>Here's what's happening with your activities.</p>
+      </div>
+
+      <button class="add-task-btn" id="openForm">
+        + New task
+      </button>
+    </section>
+
+    <section class="stats-grid">
+
+      <article class="stat-card">
+        <p>Total tasks</p>
+        <h2 id="totalCount">0</h2>
+        <span>All activities</span>
+      </article>
+
+      <article class="stat-card">
+        <p>Completed</p>
+        <h2 id="completedCount">0</h2>
+        <span>Finished activities</span>
+      </article>
+
+      <article class="stat-card">
+        <p>Pending</p>
+        <h2 id="pendingCount">0</h2>
+        <span>Still in progress</span>
+      </article>
+
+      <article class="stat-card">
+        <p>Completion rate</p>
+        <h2 id="completionRate">0%</h2>
+        <span>Overall progress</span>
+      </article>
+
+    </section>
+
+    <section class="progress-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR PERFORMANCE</p>
+          <h3>Daily progress</h3>
+        </div>
+
+        <span id="progressLabel">0 of 0 completed</span>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </section>
+
+    <section class="tasks-section">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">STAY ORGANIZED</p>
+          <h3>Your activities</h3>
+        </div>
+
+        <span id="taskBadge">0 tasks</span>
+      </div>
+
+      <div class="task-controls">
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search your tasks..."
+        >
+
+        <select id="filterSelect">
+          <option value="all">All tasks</option>
+          <option value="completed">Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+      </div>
+
+      <!-- TASK CREATION FORM -->
+
+      <div class="task-form-container hidden" id="taskFormContainer">
+
+        <div class="form-heading">
+          <div>
+            <p class="eyebrow">NEW ACTIVITY</p>
+            <h3>Create a task</h3>
+          </div>
+
+          <button type="button" id="closeForm" class="close-form">
+            Close
+          </button>
+        </div>
+
+        <form id="taskForm">
+
+          <div class="form-group">
+            <label for="taskInput">Task title</label>
+            <input
+              type="text"
+              id="taskInput"
+              placeholder="What needs to be done?"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="priorityInput">Priority</label>
+            <select id="priorityInput">
+              <option value="low">Low priority</option>
+              <option value="medium" selected>Medium priority</option>
+              <option value="high">High priority</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" id="cancelForm">
+              Cancel
+            </button>
+
+            <button type="submit" id="saveBtn">
+              Create task
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- TASK DISPLAY AREA -->
+
+      <div class="task-list" id="taskList">
+
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      <p>PULSE - PERSONAL PRODUCTIVITY</p>
+      <span>MAKE EVERY MOMENT COUNT.</span>
+    </footer>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
